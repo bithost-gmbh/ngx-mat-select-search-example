@@ -1,4 +1,4 @@
-# MatSelectSearchDummy
+# MatSelectSearchExample
 
 Example usage of [https://github.com/bithost-gmbh/ngx-mat-select-search](https://github.com/bithost-gmbh/ngx-mat-select-search)
 

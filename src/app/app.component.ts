@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ReplaySubject } from 'rxjs/ReplaySubject';
-import { MatSelect } from '@angular/material';
+import { MatSelect, VERSION } from '@angular/material';
 import { Subject } from 'rxjs/Subject';
 import { take, takeUntil } from 'rxjs/operators';
 
@@ -17,7 +17,7 @@ interface Bank {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
-  title = 'app';
+  version = VERSION;
 
 
   /** control for the selected bank */
