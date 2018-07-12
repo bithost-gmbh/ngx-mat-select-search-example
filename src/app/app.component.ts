@@ -1,8 +1,8 @@
 import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { ReplaySubject } from 'rxjs/ReplaySubject';
+import { ReplaySubject } from 'rxjs';
 import { MatSelect, VERSION } from '@angular/material';
-import { Subject } from 'rxjs/Subject';
+import { Subject } from 'rxjs';
 import { take, takeUntil } from 'rxjs/operators';
 
 
