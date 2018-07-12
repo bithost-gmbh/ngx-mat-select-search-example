@@ -43,7 +43,7 @@
   <ul *ngFor="let bank of bankMultiCtrl?.value">
     <li>{{bank.name}}</li>
   </ul>
-  <span class="version-info">Current build: {{version.full}}</span>
+
 
 
   <h3>Single selection with custom clear icon</h3>
@@ -62,4 +62,9 @@
   <p>
     Selected Bank: {{bankCtrl.value?.name}}
   </p>
+
+  <span class="version-info">
+    ngx-mat-select-search Version: 1.3.0 <br/>
+    Material Version: {{version.full}}
+  </span>
 </div>
