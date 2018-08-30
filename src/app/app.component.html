@@ -50,7 +50,7 @@
   <p>
     <mat-form-field>
       <mat-select [formControl]="bankCtrl" placeholder="Bank" #singleSelect>
-        <ngx-mat-select-search [formControl]="bankFilterCtrl">
+        <ngx-mat-select-search *ngIf="true" [formControl]="bankFilterCtrl">
           <mat-icon ngxMatSelectSearchClear>delete</mat-icon>
         </ngx-mat-select-search>
         <mat-option *ngFor="let bank of filteredBanks | async" [value]="bank">
@@ -64,7 +64,7 @@
   </p>
 
   <span class="version-info">
-    ngx-mat-select-search Version: 1.3.0 <br/>
+    ngx-mat-select-search Version: 1.3.1 <br/>
     Material Version: {{version.full}}
   </span>
 </div>
