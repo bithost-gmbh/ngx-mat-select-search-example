@@ -24,7 +24,7 @@
     "@angular/platform-browser-dynamic": "6.0.9",
     "@angular/router": "6.0.9",
     "core-js": "^2.4.1",
-    "ngx-mat-select-search": "^1.4.1",
+    "ngx-mat-select-search": "^1.4.2",
     "rxjs": "6.2.1",
     "zone.js": "^0.8.19"
   },
