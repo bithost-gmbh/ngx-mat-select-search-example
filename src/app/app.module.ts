@@ -12,6 +12,7 @@ import { OptionGroupsExampleComponent } from './examples/04-option-groups-exampl
 import { CustomClearIconExampleComponent } from './examples/03-custom-clear-icon-example/custom-clear-icon-example.component';
 import { MultipleSelectionExampleComponent } from './examples/02-multiple-selection-example/multiple-selection-example.component';
 import { SingleSelectionExampleComponent } from './examples/01-single-selection-example/single-selection-example.component';
+import { MultipleSelectionSelectAllExampleComponent } from './examples/06-multiple-selection-select-all-example/multiple-selection-select-all-example.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { SingleSelectionExampleComponent } from './examples/01-single-selection-
     MultipleSelectionExampleComponent,
     CustomClearIconExampleComponent,
     OptionGroupsExampleComponent,
-    ServerSideSearchExampleComponent
+    ServerSideSearchExampleComponent,
+    MultipleSelectionSelectAllExampleComponent
   ],
   imports: [
     BrowserModule,
