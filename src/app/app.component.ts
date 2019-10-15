@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { VERSION } from '@angular/material';
+import { VERSION } from '@angular/material/core';
 
 import { MatSelectSearchVersion } from 'ngx-mat-select-search';
 
