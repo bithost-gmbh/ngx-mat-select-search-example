@@ -2,7 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatFormFieldModule, MatIconModule, MatSelectModule, MatToolbarModule } from '@angular/material';
+import { MatSelectModule } from '@angular/material/select';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
 
 import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 
@@ -12,7 +15,9 @@ import { OptionGroupsExampleComponent } from './examples/04-option-groups-exampl
 import { CustomClearIconExampleComponent } from './examples/03-custom-clear-icon-example/custom-clear-icon-example.component';
 import { MultipleSelectionExampleComponent } from './examples/02-multiple-selection-example/multiple-selection-example.component';
 import { SingleSelectionExampleComponent } from './examples/01-single-selection-example/single-selection-example.component';
-import { MultipleSelectionSelectAllExampleComponent } from './examples/06-multiple-selection-select-all-example/multiple-selection-select-all-example.component';
+import {
+  MultipleSelectionSelectAllExampleComponent
+} from './examples/06-multiple-selection-select-all-example/multiple-selection-select-all-example.component';
 
 
 @NgModule({
