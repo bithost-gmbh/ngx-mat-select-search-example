@@ -16,7 +16,8 @@ import { CustomClearIconExampleComponent } from './examples/03-custom-clear-icon
 import { MultipleSelectionExampleComponent } from './examples/02-multiple-selection-example/multiple-selection-example.component';
 import { SingleSelectionExampleComponent } from './examples/01-single-selection-example/single-selection-example.component';
 import { MultipleSelectionSelectAllExampleComponent } from './examples/06-multiple-selection-select-all-example/multiple-selection-select-all-example.component';
-import { TooltipSelectAllExampleComponent } from './examples/07-tooltip-select-all-exemple/tooltip-select-all-example.component';
+import { TooltipSelectAllExampleComponent } from './examples/07-tooltip-select-all-example/tooltip-select-all-example.component';
+import { InfiniteScrollExampleComponent } from './examples/08-infinite-scroll-example/infinite-scroll-example.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { TooltipSelectAllExampleComponent } from './examples/07-tooltip-select-a
     OptionGroupsExampleComponent,
     ServerSideSearchExampleComponent,
     MultipleSelectionSelectAllExampleComponent,
-    TooltipSelectAllExampleComponent
+    TooltipSelectAllExampleComponent,
+    InfiniteScrollExampleComponent
   ],
   imports: [
     BrowserModule,
