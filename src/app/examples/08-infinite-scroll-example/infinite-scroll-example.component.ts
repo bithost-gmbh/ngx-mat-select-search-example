@@ -65,7 +65,7 @@ export class InfiniteScrollExampleComponent implements OnInit, OnDestroy {
     const selectOpenChange$ = this.infiniteScrollSelect.openedChange
     combineLatest([selectOpenChange$, searchValueChange$])
       .pipe(
-        filter(([isOpen,]) => isOpen === true),
+        filter(([isOpen,]) => isOpen === true && !this.ctrl.value),
         takeUntil(this._onDestroy)
       )
       .subscribe(([, value]) => this.onSearchChange(value));
