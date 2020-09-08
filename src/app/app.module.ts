@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
@@ -19,6 +19,7 @@ import { SingleSelectionExampleComponent } from './examples/01-single-selection-
 import { MultipleSelectionSelectAllExampleComponent } from './examples/06-multiple-selection-select-all-example/multiple-selection-select-all-example.component';
 import { TooltipSelectAllExampleComponent } from './examples/07-tooltip-select-all-example/tooltip-select-all-example.component';
 import { InfiniteScrollExampleComponent } from './examples/08-infinite-scroll-example/infinite-scroll-example.component';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 
 @NgModule({
@@ -36,13 +37,15 @@ import { InfiniteScrollExampleComponent } from './examples/08-infinite-scroll-ex
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    FormsModule,
     BrowserAnimationsModule,
     MatSelectModule,
     MatToolbarModule,
     MatFormFieldModule,
     MatIconModule,
     NgxMatSelectSearchModule,
-    MatSelectInfiniteScrollModule
+    MatSelectInfiniteScrollModule,
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
