@@ -24,7 +24,7 @@
     "@angular/router": "10.0.3",
     "core-js": "^2.6.1",
     "ng-mat-select-infinite-scroll": "^2.0.0",
-    "ngx-mat-select-search": "^3.1.0",
+    "ngx-mat-select-search": "^3.1.1",
     "rxjs": "6.5.4",
     "tslib": "^2.0.0",
     "update": "^0.7.4",
