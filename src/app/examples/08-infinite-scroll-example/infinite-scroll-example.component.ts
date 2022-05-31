@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { combineLatest, merge, Observable, Subject } from 'rxjs';
 import { map, mapTo, scan, startWith, takeUntil } from 'rxjs/operators';
 import { MatSelect } from '@angular/material/select';
@@ -25,10 +25,10 @@ export class InfiniteScrollExampleComponent implements OnInit, OnDestroy {
   }));
 
   /** control for the selected bank */
-  bankCtrl: FormControl = new FormControl();
+  bankCtrl: UntypedFormControl = new UntypedFormControl();
 
   /** control for the search input value */
-  searchCtrl: FormControl = new FormControl();
+  searchCtrl: UntypedFormControl = new UntypedFormControl();
 
   /** list of data corresponding to the search input */
   private filteredData$: Observable<Bank[]> = this.searchCtrl.valueChanges.pipe(
