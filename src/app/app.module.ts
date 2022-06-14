@@ -19,6 +19,7 @@ import { MultipleSelectionSelectAllExampleComponent } from './examples/06-multip
 import { TooltipSelectAllExampleComponent } from './examples/07-tooltip-select-all-example/tooltip-select-all-example.component';
 import { InfiniteScrollExampleComponent } from './examples/08-infinite-scroll-example/infinite-scroll-example.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { CustomNoEntriesFoundExampleComponent } from './examples/09-custom-no-entries-found-example/custom-no-entries-found-example.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     SingleSelectionExampleComponent,
     MultipleSelectionExampleComponent,
     CustomClearIconExampleComponent,
+    CustomNoEntriesFoundExampleComponent,
     OptionGroupsExampleComponent,
     ServerSideSearchExampleComponent,
     MultipleSelectionSelectAllExampleComponent,
