@@ -1,8 +1,8 @@
 import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { UntypedFormControl } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 import { ReplaySubject, Subject } from 'rxjs';
 import { take, takeUntil } from 'rxjs/operators';
-import { MatSelect } from '@angular/material/select';
+import { MatLegacySelect as MatSelect } from '@angular/material/legacy-select';
 
 import { Bank, BANKS } from '../demo-data';
 
@@ -17,10 +17,10 @@ export class MultipleSelectionExampleComponent implements OnInit, AfterViewInit,
   protected banks: Bank[] = BANKS;
 
   /** control for the selected bank for multi-selection */
-  public bankMultiCtrl: UntypedFormControl = new UntypedFormControl();
+  public bankMultiCtrl: FormControl<Bank[]> = new FormControl<Bank[]>([]);
 
   /** control for the MatSelect filter keyword multi-selection */
-  public bankMultiFilterCtrl: UntypedFormControl = new UntypedFormControl();
+  public bankMultiFilterCtrl: FormControl<string> = new FormControl<string>('');
 
   /** list of banks filtered by search keyword */
   public filteredBanksMulti: ReplaySubject<Bank[]> = new ReplaySubject<Bank[]>(1);
