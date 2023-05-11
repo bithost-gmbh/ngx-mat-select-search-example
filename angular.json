@@ -70,7 +70,6 @@
       }
     }
   },
-  "defaultProject": "mat-select-search-example",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",
