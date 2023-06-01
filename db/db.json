@@ -1,0 +1,76 @@
+{
+  "BANKS": [
+    {
+      "id": "A",
+      "name": "Bank A (Switzerland)"
+    },
+    {
+      "id": "B",
+      "name": "Bank B (Switzerland)"
+    },
+    {
+      "id": "C",
+      "name": "Bank C (France)"
+    },
+    {
+      "id": "D",
+      "name": "Bank D (France)"
+    },
+    {
+      "id": "E",
+      "name": "Bank E (France)"
+    },
+    {
+      "id": "F",
+      "name": "Bank F (Italy)"
+    },
+    {
+      "id": "G",
+      "name": "Bank G (Italy)"
+    },
+    {
+      "id": "H",
+      "name": "Bank H (Italy)"
+    },
+    {
+      "id": "I",
+      "name": "Bank I (Italy)"
+    },
+    {
+      "id": "J",
+      "name": "Bank J (Italy)"
+    },
+    {
+      "id": "K",
+      "name": "Bank Kolombia (United States of America)"
+    },
+    {
+      "id": "L",
+      "name": "Bank L (Germany)"
+    },
+    {
+      "id": "M",
+      "name": "Bank M (Germany)"
+    },
+    {
+      "id": "N",
+      "name": "Bank N (Germany)"
+    },
+    {
+      "id": "O",
+      "name": "Bank O (Germany)"
+    },
+    {
+      "id": "P",
+      "name": "Bank P (Germany)"
+    },
+    {
+      "id": "Q",
+      "name": "Bank Q (Germany)"
+    },
+    {
+      "id": "R",
+      "name": "Bank R (Germany)"
+    }
+  ]
+}

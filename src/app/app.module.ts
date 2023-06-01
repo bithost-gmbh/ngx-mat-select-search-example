@@ -20,6 +20,9 @@ import { TooltipSelectAllExampleComponent } from './examples/07-tooltip-select-a
 import { InfiniteScrollExampleComponent } from './examples/08-infinite-scroll-example/infinite-scroll-example.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { CustomNoEntriesFoundExampleComponent } from './examples/09-custom-no-entries-found-example/custom-no-entries-found-example.component';
+import { ServerSideSearchWithNgModelExampleComponent } from './examples/10-server-side-search-with-ngModel/server-side-search-with-ngModel-example.component'
+import {APIService} from './examples/10-server-side-search-with-ngModel/server-side.service';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -29,6 +32,7 @@ import { CustomNoEntriesFoundExampleComponent } from './examples/09-custom-no-en
     MultipleSelectionExampleComponent,
     CustomClearIconExampleComponent,
     CustomNoEntriesFoundExampleComponent,
+    ServerSideSearchWithNgModelExampleComponent,
     OptionGroupsExampleComponent,
     ServerSideSearchExampleComponent,
     MultipleSelectionSelectAllExampleComponent,
@@ -45,9 +49,12 @@ import { CustomNoEntriesFoundExampleComponent } from './examples/09-custom-no-en
     MatFormFieldModule,
     MatIconModule,
     NgxMatSelectSearchModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    APIService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

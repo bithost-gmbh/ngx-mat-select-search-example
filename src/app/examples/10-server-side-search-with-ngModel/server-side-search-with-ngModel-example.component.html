@@ -1,0 +1,30 @@
+<h3>Server Side Search With NgModel</h3>
+<p>
+  <mat-form-field>
+    <mat-select
+      [(ngModel)]="selectedBanks"
+      [compareWith]="compareWithFn"
+      [multiple]="true"
+      name="bank"
+      placeholder="Bank"
+    >
+      <!-- place ngx-mat-select-search inside mat-option to allow opening without initial selection -->
+      <mat-option>
+        <ngx-mat-select-search [formControl]="bankServerSideFilteringCtrl" [searching]="searching"
+                               noEntriesFoundLabel="not found"></ngx-mat-select-search>
+      </mat-option>
+      <mat-option *ngFor="let bank of filteredServerSideBanks | async" [value]="bank">
+        {{bank.name}}
+      </mat-option>
+      <ng-container *ngIf="!bankServerSideFilteringCtrl.value">
+        <mat-option *ngFor="let bank of selectedBanks"
+                    [value]="bank" style="display: none">
+          {{ bank.name }}
+        </mat-option>
+      </ng-container>
+    </mat-select>
+  </mat-form-field>
+</p>
+<p>
+  Selected Banks: <span *ngFor="let bank of selectedBanks">{{bank.name}}</span>
+</p>
