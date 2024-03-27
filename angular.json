@@ -59,11 +59,11 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "mat-select-search-example:build"
+            "buildTarget": "mat-select-search-example:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "mat-select-search-example:build:production"
+              "buildTarget": "mat-select-search-example:build:production"
             }
           }
         }
