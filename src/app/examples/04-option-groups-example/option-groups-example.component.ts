@@ -7,9 +7,10 @@ import { Bank, BankGroup, BANKGROUPS } from '../demo-data';
 
 
 @Component({
-  selector: 'app-option-groups-example',
-  templateUrl: './option-groups-example.component.html',
-  styleUrls: ['./option-groups-example.component.scss']
+    selector: 'app-option-groups-example',
+    templateUrl: './option-groups-example.component.html',
+    styleUrls: ['./option-groups-example.component.scss'],
+    standalone: false
 })
 export class OptionGroupsExampleComponent implements OnInit, OnDestroy {
 

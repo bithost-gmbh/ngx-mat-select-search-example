@@ -7,9 +7,10 @@ import { Bank, BANKS } from '../demo-data';
 
 
 @Component({
-  selector: 'app-server-side-search-example',
-  templateUrl: './server-side-search-example.component.html',
-  styleUrls: ['./server-side-search-example.component.scss']
+    selector: 'app-server-side-search-example',
+    templateUrl: './server-side-search-example.component.html',
+    styleUrls: ['./server-side-search-example.component.scss'],
+    standalone: false
 })
 export class ServerSideSearchExampleComponent implements OnInit, OnDestroy {
 

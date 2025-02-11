@@ -7,9 +7,10 @@ import { MatSelect } from '@angular/material/select';
 import { Bank, BANKS } from '../demo-data';
 
 @Component({
-  selector: 'app-tooltip-select-all-example',
-  templateUrl: './tooltip-select-all-example.component.html',
-  styleUrls: ['./tooltip-select-all-example.component.scss']
+    selector: 'app-tooltip-select-all-example',
+    templateUrl: './tooltip-select-all-example.component.html',
+    styleUrls: ['./tooltip-select-all-example.component.scss'],
+    standalone: false
 })
 export class TooltipSelectAllExampleComponent implements OnInit, AfterViewInit, OnDestroy {
 
