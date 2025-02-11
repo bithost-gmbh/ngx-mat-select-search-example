@@ -4,9 +4,10 @@ import { SingleSelectionExampleComponent } from '../01-single-selection-example/
 
 
 @Component({
-  selector: 'app-custom-clear-icon-example',
-  templateUrl: './custom-clear-icon-example.component.html',
-  styleUrls: ['./custom-clear-icon-example.component.scss']
+    selector: 'app-custom-clear-icon-example',
+    templateUrl: './custom-clear-icon-example.component.html',
+    styleUrls: ['./custom-clear-icon-example.component.scss'],
+    standalone: false
 })
 export class CustomClearIconExampleComponent extends SingleSelectionExampleComponent implements OnInit, AfterViewInit, OnDestroy {
 

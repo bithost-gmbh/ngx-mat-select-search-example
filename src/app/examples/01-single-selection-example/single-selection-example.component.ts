@@ -8,9 +8,10 @@ import { Bank, BANKS } from '../demo-data';
 
 
 @Component({
-  selector: 'app-single-selection-example',
-  templateUrl: './single-selection-example.component.html',
-  styleUrls: ['./single-selection-example.component.scss']
+    selector: 'app-single-selection-example',
+    templateUrl: './single-selection-example.component.html',
+    styleUrls: ['./single-selection-example.component.scss'],
+    standalone: false
 })
 export class SingleSelectionExampleComponent implements OnInit, AfterViewInit, OnDestroy {
 

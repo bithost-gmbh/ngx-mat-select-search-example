@@ -6,9 +6,10 @@ import { MatSelect } from '@angular/material/select';
 import { take, takeUntil } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-custom-no-entries-found-example',
-  templateUrl: './custom-no-entries-found-example.component.html',
-  styleUrls: ['./custom-no-entries-found-example.component.scss']
+    selector: 'app-custom-no-entries-found-example',
+    templateUrl: './custom-no-entries-found-example.component.html',
+    styleUrls: ['./custom-no-entries-found-example.component.scss'],
+    standalone: false
 })
 export class CustomNoEntriesFoundExampleComponent implements OnInit, AfterViewInit, OnDestroy {
 

@@ -9,9 +9,10 @@ import { Bank } from '../demo-data';
  * Based upon: https://stackblitz.com/edit/mat-select-search-with-infinity-scroll
  */
 @Component({
-  selector: 'app-infinite-scroll-example',
-  templateUrl: './infinite-scroll-example.component.html',
-  styleUrls: ['./infinite-scroll-example.component.scss']
+    selector: 'app-infinite-scroll-example',
+    templateUrl: './infinite-scroll-example.component.html',
+    styleUrls: ['./infinite-scroll-example.component.scss'],
+    standalone: false
 })
 export class InfiniteScrollExampleComponent implements OnInit, OnDestroy {
 

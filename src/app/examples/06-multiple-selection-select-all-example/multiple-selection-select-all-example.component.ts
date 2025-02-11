@@ -7,9 +7,10 @@ import { MatSelect } from '@angular/material/select';
 import { Bank, BANKS } from '../demo-data';
 
 @Component({
-  selector: 'app-multiple-selection-select-all-example',
-  templateUrl: './multiple-selection-select-all-example.component.html',
-  styleUrls: ['./multiple-selection-select-all-example.component.scss']
+    selector: 'app-multiple-selection-select-all-example',
+    templateUrl: './multiple-selection-select-all-example.component.html',
+    styleUrls: ['./multiple-selection-select-all-example.component.scss'],
+    standalone: false
 })
 export class MultipleSelectionSelectAllExampleComponent implements OnInit, AfterViewInit, OnDestroy {
 
