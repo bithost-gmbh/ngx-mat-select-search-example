@@ -5,11 +5,15 @@
       <mat-option>
         <ngx-mat-select-search [formControl]="bankGroupsFilterCtrl"></ngx-mat-select-search>
       </mat-option>
-      <mat-optgroup *ngFor="let group of filteredBankGroups | async" [label]="group.name">
-        <mat-option *ngFor="let bank of group.banks" [value]="bank">
-          {{bank.name}}
-        </mat-option>
-      </mat-optgroup>
+      @for (group of filteredBankGroups | async; track group) {
+        <mat-optgroup [label]="group.name">
+          @for (bank of group.banks; track bank) {
+            <mat-option [value]="bank">
+              {{bank.name}}
+            </mat-option>
+          }
+        </mat-optgroup>
+      }
     </mat-select>
   </mat-form-field>
 </p>

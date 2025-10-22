@@ -6,9 +6,11 @@
       <mat-option>
         <ngx-mat-select-search [formControl]="bankServerSideFilteringCtrl" [searching]="searching"></ngx-mat-select-search>
       </mat-option>
-      <mat-option *ngFor="let bank of filteredServerSideBanks | async" [value]="bank">
-        {{bank.name}}
-      </mat-option>
+      @for (bank of filteredServerSideBanks | async; track bank) {
+        <mat-option [value]="bank">
+          {{bank.name}}
+        </mat-option>
+      }
     </mat-select>
   </mat-form-field>
 </p>

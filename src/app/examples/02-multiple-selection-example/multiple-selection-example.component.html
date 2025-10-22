@@ -6,15 +6,19 @@
       <mat-option>
         <ngx-mat-select-search [formControl]="bankMultiFilterCtrl"></ngx-mat-select-search>
       </mat-option>
-      <mat-option *ngFor="let bank of filteredBanksMulti | async" [value]="bank">
-        {{bank.name}}
-      </mat-option>
+      @for (bank of filteredBanksMulti | async; track bank) {
+        <mat-option [value]="bank">
+          {{bank.name}}
+        </mat-option>
+      }
     </mat-select>
   </mat-form-field>
 </p>
 <p>
   Selected Banks:
 </p>
-<ul *ngFor="let bank of bankMultiCtrl?.value">
-  <li>{{bank.name}}</li>
-</ul>
+@for (bank of bankMultiCtrl?.value; track bank) {
+  <ul>
+    <li>{{bank.name}}</li>
+  </ul>
+}
