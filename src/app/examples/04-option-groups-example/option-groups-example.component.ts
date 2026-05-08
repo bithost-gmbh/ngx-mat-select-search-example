@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ReplaySubject, Subject } from 'rxjs';
 import { FormControl } from '@angular/forms';
 import { takeUntil } from 'rxjs/operators';
@@ -10,6 +10,7 @@ import { Bank, BankGroup, BANKGROUPS } from '../demo-data';
     selector: 'app-option-groups-example',
     templateUrl: './option-groups-example.component.html',
     styleUrls: ['./option-groups-example.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class OptionGroupsExampleComponent implements OnInit, OnDestroy {
@@ -18,10 +19,10 @@ export class OptionGroupsExampleComponent implements OnInit, OnDestroy {
   protected bankGroups: BankGroup[] = BANKGROUPS;
 
   /** control for the selected bank for option groups */
-  public bankGroupsCtrl: FormControl<Bank> = new FormControl<Bank>(null);
+  public bankGroupsCtrl: FormControl<Bank | null> = new FormControl<Bank | null>(null);
 
   /** control for the MatSelect filter keyword for option groups */
-  public bankGroupsFilterCtrl: FormControl<string> = new FormControl<string>('');
+  public bankGroupsFilterCtrl: FormControl<string | null> = new FormControl<string | null>('');
 
   /** list of bank groups filtered by search keyword for option groups */
   public filteredBankGroups: ReplaySubject<BankGroup[]> = new ReplaySubject<BankGroup[]>(1);
@@ -68,7 +69,7 @@ export class OptionGroupsExampleComponent implements OnInit, OnDestroy {
       bankGroupsCopy.filter(bankGroup => {
         const showBankGroup = bankGroup.name.toLowerCase().indexOf(search) > -1;
         if (!showBankGroup) {
-          bankGroup.banks = bankGroup.banks.filter(bank => bank.name.toLowerCase().indexOf(search) > -1);
+          bankGroup.banks = bankGroup.banks.filter((bank: Bank) => bank.name.toLowerCase().indexOf(search!) > -1);
         }
         return bankGroup.banks.length > 0;
       })
@@ -76,7 +77,7 @@ export class OptionGroupsExampleComponent implements OnInit, OnDestroy {
   }
 
   protected copyBankGroups(bankGroups: BankGroup[]) {
-    const bankGroupsCopy = [];
+    const bankGroupsCopy: BankGroup[] = [];
     bankGroups.forEach(bankGroup => {
       bankGroupsCopy.push({
         name: bankGroup.name,

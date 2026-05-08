@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ReplaySubject, Subject } from 'rxjs';
 import { take, takeUntil } from 'rxjs/operators';
@@ -10,6 +10,7 @@ import { Bank, BANKS } from '../demo-data';
     selector: 'app-multiple-selection-example',
     templateUrl: './multiple-selection-example.component.html',
     styleUrls: ['./multiple-selection-example.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class MultipleSelectionExampleComponent implements OnInit, AfterViewInit, OnDestroy {
@@ -18,15 +19,15 @@ export class MultipleSelectionExampleComponent implements OnInit, AfterViewInit,
   protected banks: Bank[] = BANKS;
 
   /** control for the selected bank for multi-selection */
-  public bankMultiCtrl: FormControl<Bank[]> = new FormControl<Bank[]>([]);
+  public bankMultiCtrl: FormControl<Bank[] | null> = new FormControl<Bank[] | null>([]);
 
   /** control for the MatSelect filter keyword multi-selection */
-  public bankMultiFilterCtrl: FormControl<string> = new FormControl<string>('');
+  public bankMultiFilterCtrl: FormControl<string | null> = new FormControl<string | null>('');
 
   /** list of banks filtered by search keyword */
   public filteredBanksMulti: ReplaySubject<Bank[]> = new ReplaySubject<Bank[]>(1);
 
-  @ViewChild('multiSelect', { static: true }) multiSelect: MatSelect;
+  @ViewChild('multiSelect', { static: true }) multiSelect!: MatSelect;
 
   /** Subject that emits when the component has been destroyed. */
   protected _onDestroy = new Subject<void>();
@@ -84,7 +85,7 @@ export class MultipleSelectionExampleComponent implements OnInit, AfterViewInit,
       this.filteredBanksMulti.next(this.banks.slice());
       return;
     } else {
-      search = search.toLowerCase();
+      search = search!.toLowerCase();
     }
     // filter the banks
     this.filteredBanksMulti.next(

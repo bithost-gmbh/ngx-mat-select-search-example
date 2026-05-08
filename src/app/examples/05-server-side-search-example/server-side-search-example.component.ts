@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ReplaySubject, Subject } from 'rxjs';
 import { debounceTime, delay, tap, filter, map, takeUntil } from 'rxjs/operators';
@@ -10,6 +10,7 @@ import { Bank, BANKS } from '../demo-data';
     selector: 'app-server-side-search-example',
     templateUrl: './server-side-search-example.component.html',
     styleUrls: ['./server-side-search-example.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ServerSideSearchExampleComponent implements OnInit, OnDestroy {
@@ -18,10 +19,10 @@ export class ServerSideSearchExampleComponent implements OnInit, OnDestroy {
   protected banks: Bank[] = BANKS;
 
   /** control for the selected bank for server side filtering */
-  public bankServerSideCtrl: FormControl<Bank> = new FormControl<Bank>(null);
+  public bankServerSideCtrl: FormControl<Bank | null> = new FormControl<Bank | null>(null);
 
   /** control for filter for server side. */
-  public bankServerSideFilteringCtrl: FormControl<string> = new FormControl<string>('');
+  public bankServerSideFilteringCtrl: FormControl<string | null> = new FormControl<string | null>('');
 
   /** indicate search operation is in progress */
   public searching = false;
@@ -47,7 +48,7 @@ export class ServerSideSearchExampleComponent implements OnInit, OnDestroy {
           }
 
           // simulate server fetching and filtering data
-          return this.banks.filter(bank => bank.name.toLowerCase().indexOf(search) > -1);
+          return this.banks.filter(bank => bank.name.toLowerCase().indexOf(search!) > -1);
         }),
         delay(500),
         takeUntil(this._onDestroy)

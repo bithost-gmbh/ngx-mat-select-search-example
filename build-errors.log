@@ -1,0 +1,224 @@
+
+> mat-select-search-example@0.0.0 build
+> ng build --configuration production
+
+❯ Building...
+One or more browsers which are configured in the project's Browserslist configuration will be ignored as ES5 output is not supported by the Angular CLI.
+Ignored browsers:
+chrome 41, ie 11, ie 10, ie 9, kaios 2.5, op_mini all
+One or more browsers which are configured in the project's Browserslist configuration fall outside Angular's browser support for this version.
+Unsupported browsers:
+and_qq 14.9, and_uc 15.5, android 147, chrome 109, kaios 3.0-3.1, op_mob 80, opera 131, opera 127, samsung 29, samsung 28
+✔ Building...
+Application bundle generation failed. [1.220 seconds] - 2026-05-08T12:23:48.901Z
+
+✘ [ERROR] NG4003: Angular compiler option "extendedDiagnostics" is configured, however "strictTemplates" is disabled.
+
+Using "extendedDiagnostics" requires that "strictTemplates" is also enabled.
+
+One of the following actions is required:
+1. Remove "strictTemplates: false" to enable it.
+2. Remove "extendedDiagnostics" configuration to disable them. [plugin angular-compiler]
+
+
+✘ [ERROR] TS5101: Option 'baseUrl' is deprecated and will stop functioning in TypeScript 7.0. Specify compilerOption '"ignoreDeprecations": "6.0"' to silence this error.
+  Visit https://aka.ms/ts6 for migration information. [plugin angular-compiler]
+
+
+✘ [ERROR] TS2345: Argument of type 'null' is not assignable to parameter of type 'Bank | FormControlState<Bank>'. [plugin angular-compiler]
+
+    src/app/examples/01-single-selection-example/single-selection-example.component.ts:23:61:
+      23 │   public bankCtrl: FormControl<Bank> = new FormControl<Bank>(null);
+         ╵                                                              ~~~~
+
+
+✘ [ERROR] TS2322: Type 'FormControl<string | null>' is not assignable to type 'FormControl<string>'.
+  Type 'string | null' is not assignable to type 'string'.
+    Type 'null' is not assignable to type 'string'. [plugin angular-compiler]
+
+    src/app/examples/01-single-selection-example/single-selection-example.component.ts:26:9:
+      26 │   public bankFilterCtrl: FormControl<string> = new FormControl<str...
+         ╵          ~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2564: Property 'singleSelect' has no initializer and is not definitely assigned in the constructor. [plugin angular-compiler]
+
+    src/app/examples/01-single-selection-example/single-selection-example.component.ts:31:47:
+      31 │ ...ewChild('singleSelect', { static: true }) singleSelect: MatSelect;
+         ╵                                              ~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2322: Type 'FormControl<Bank[] | null>' is not assignable to type 'FormControl<Bank[]>'.
+  Type 'Bank[] | null' is not assignable to type 'Bank[]'.
+    Type 'null' is not assignable to type 'Bank[]'. [plugin angular-compiler]
+
+    src/app/examples/02-multiple-selection-example/multiple-selection-example.component.ts:22:9:
+      22 │   public bankMultiCtrl: FormControl<Bank[]> = new FormControl<Bank...
+         ╵          ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2322: Type 'FormControl<string | null>' is not assignable to type 'FormControl<string>'.
+  Type 'string | null' is not assignable to type 'string'.
+    Type 'null' is not assignable to type 'string'. [plugin angular-compiler]
+
+    src/app/examples/02-multiple-selection-example/multiple-selection-example.component.ts:25:9:
+      25 │   public bankMultiFilterCtrl: FormControl<string> = new FormContro...
+         ╵          ~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2564: Property 'multiSelect' has no initializer and is not definitely assigned in the constructor. [plugin angular-compiler]
+
+    src/app/examples/02-multiple-selection-example/multiple-selection-example.component.ts:30:46:
+      30 │   @ViewChild('multiSelect', { static: true }) multiSelect: MatSelect;
+         ╵                                               ~~~~~~~~~~~
+
+
+✘ [ERROR] TS2345: Argument of type 'null' is not assignable to parameter of type 'Bank | FormControlState<Bank>'. [plugin angular-compiler]
+
+    src/app/examples/04-option-groups-example/option-groups-example.component.ts:22:67:
+      22 │ ...c bankGroupsCtrl: FormControl<Bank> = new FormControl<Bank>(null);
+         ╵                                                                ~~~~
+
+
+✘ [ERROR] TS2322: Type 'FormControl<string | null>' is not assignable to type 'FormControl<string>'.
+  Type 'string | null' is not assignable to type 'string'.
+    Type 'null' is not assignable to type 'string'. [plugin angular-compiler]
+
+    src/app/examples/04-option-groups-example/option-groups-example.component.ts:25:9:
+      25 │   public bankGroupsFilterCtrl: FormControl<string> = new FormContr...
+         ╵          ~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS7006: Parameter 'bank' implicitly has an 'any' type. [plugin angular-compiler]
+
+    src/app/examples/04-option-groups-example/option-groups-example.component.ts:72:51:
+      72 │ ...anks = bankGroup.banks.filter(bank => bank.name.toLowerCase().i...
+         ╵                                  ~~~~
+
+
+✘ [ERROR] TS7034: Variable 'bankGroupsCopy' implicitly has type 'any[]' in some locations where its type cannot be determined. [plugin angular-compiler]
+
+    src/app/examples/04-option-groups-example/option-groups-example.component.ts:80:10:
+      80 │     const bankGroupsCopy = [];
+         ╵           ~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS7005: Variable 'bankGroupsCopy' implicitly has an 'any[]' type. [plugin angular-compiler]
+
+    src/app/examples/04-option-groups-example/option-groups-example.component.ts:87:11:
+      87 │     return bankGroupsCopy;
+         ╵            ~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2345: Argument of type 'null' is not assignable to parameter of type 'Bank | FormControlState<Bank>'. [plugin angular-compiler]
+
+    src/app/examples/05-server-side-search-example/server-side-search-example.component.ts:22:71:
+      22 │ ...nkServerSideCtrl: FormControl<Bank> = new FormControl<Bank>(null);
+         ╵                                                                ~~~~
+
+
+✘ [ERROR] TS2322: Type 'FormControl<string | null>' is not assignable to type 'FormControl<string>'.
+  Type 'string | null' is not assignable to type 'string'.
+    Type 'null' is not assignable to type 'string'. [plugin angular-compiler]
+
+    src/app/examples/05-server-side-search-example/server-side-search-example.component.ts:25:9:
+      25 │   public bankServerSideFilteringCtrl: FormControl<string> = new Fo...
+         ╵          ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2322: Type 'FormControl<Bank[] | null>' is not assignable to type 'FormControl<Bank[]>'.
+  Type 'Bank[] | null' is not assignable to type 'Bank[]'.
+    Type 'null' is not assignable to type 'Bank[]'. [plugin angular-compiler]
+
+    src/app/examples/06-multiple-selection-select-all-example/multiple-selection-select-all-example.component.ts:22:9:
+      22 │   public bankMultiCtrl: FormControl<Bank[]> = new FormControl<Bank...
+         ╵          ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2322: Type 'FormControl<string | null>' is not assignable to type 'FormControl<string>'.
+  Type 'string | null' is not assignable to type 'string'.
+    Type 'null' is not assignable to type 'string'. [plugin angular-compiler]
+
+    src/app/examples/06-multiple-selection-select-all-example/multiple-selection-select-all-example.component.ts:25:9:
+      25 │   public bankMultiFilterCtrl: FormControl<string> = new FormContro...
+         ╵          ~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2564: Property 'multiSelect' has no initializer and is not definitely assigned in the constructor. [plugin angular-compiler]
+
+    src/app/examples/06-multiple-selection-select-all-example/multiple-selection-select-all-example.component.ts:37:46:
+      37 │   @ViewChild('multiSelect', { static: true }) multiSelect: MatSelect;
+         ╵                                               ~~~~~~~~~~~
+
+
+✘ [ERROR] TS2322: Type 'FormControl<Bank[] | null>' is not assignable to type 'FormControl<Bank[]>'.
+  Type 'Bank[] | null' is not assignable to type 'Bank[]'.
+    Type 'null' is not assignable to type 'Bank[]'. [plugin angular-compiler]
+
+    src/app/examples/07-tooltip-select-all-example/tooltip-select-all-example.component.ts:22:9:
+      22 │   public bankMultiCtrl: FormControl<Bank[]> = new FormControl<Bank...
+         ╵          ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2322: Type 'FormControl<string | null>' is not assignable to type 'FormControl<string>'.
+  Type 'string | null' is not assignable to type 'string'.
+    Type 'null' is not assignable to type 'string'. [plugin angular-compiler]
+
+    src/app/examples/07-tooltip-select-all-example/tooltip-select-all-example.component.ts:25:9:
+      25 │   public bankMultiFilterCtrl: FormControl<string> = new FormContro...
+         ╵          ~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2564: Property 'multiSelect' has no initializer and is not definitely assigned in the constructor. [plugin angular-compiler]
+
+    src/app/examples/07-tooltip-select-all-example/tooltip-select-all-example.component.ts:32:46:
+      32 │   @ViewChild('multiSelect', { static: true }) multiSelect: MatSelect;
+         ╵                                               ~~~~~~~~~~~
+
+
+✘ [ERROR] TS2564: Property 'infiniteScrollSelect' has no initializer and is not definitely assigned in the constructor. [plugin angular-compiler]
+
+    src/app/examples/08-infinite-scroll-example/infinite-scroll-example.component.ts:21:2:
+      21 │   infiniteScrollSelect: MatSelect;
+         ╵   ~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2345: Argument of type 'null' is not assignable to parameter of type 'string | FormControlState<string>'. [plugin angular-compiler]
+
+    src/app/examples/08-infinite-scroll-example/infinite-scroll-example.component.ts:30:65:
+      30 │ ...lic bankCtrl: FormControl<string> = new FormControl<string>(null);
+         ╵                                                                ~~~~
+
+
+✘ [ERROR] TS2322: Type 'FormControl<string | null>' is not assignable to type 'FormControl<string>'.
+  Type 'string | null' is not assignable to type 'string'.
+    Type 'null' is not assignable to type 'string'. [plugin angular-compiler]
+
+    src/app/examples/08-infinite-scroll-example/infinite-scroll-example.component.ts:33:9:
+      33 │   public bankFilterCtrl: FormControl<string> = new FormControl<str...
+         ╵          ~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2345: Argument of type 'null' is not assignable to parameter of type 'Bank | FormControlState<Bank>'. [plugin angular-compiler]
+
+    src/app/examples/09-custom-no-entries-found-example/custom-no-entries-found-example.component.ts:21:61:
+      21 │   public bankCtrl: FormControl<Bank> = new FormControl<Bank>(null);
+         ╵                                                              ~~~~
+
+
+✘ [ERROR] TS2322: Type 'FormControl<string | null>' is not assignable to type 'FormControl<string>'.
+  Type 'string | null' is not assignable to type 'string'.
+    Type 'null' is not assignable to type 'string'. [plugin angular-compiler]
+
+    src/app/examples/09-custom-no-entries-found-example/custom-no-entries-found-example.component.ts:24:9:
+      24 │   public bankFilterCtrl: FormControl<string> = new FormControl<str...
+         ╵          ~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2564: Property 'singleSelect' has no initializer and is not definitely assigned in the constructor. [plugin angular-compiler]
+
+    src/app/examples/09-custom-no-entries-found-example/custom-no-entries-found-example.component.ts:29:47:
+      29 │ ...ewChild('singleSelect', { static: true }) singleSelect: MatSelect;
+         ╵                                              ~~~~~~~~~~~~
+
+

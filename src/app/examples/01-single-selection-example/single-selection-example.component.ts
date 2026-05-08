@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ReplaySubject, Subject } from 'rxjs';
 import { take, takeUntil } from 'rxjs/operators';
@@ -11,6 +11,7 @@ import { Bank, BANKS } from '../demo-data';
     selector: 'app-single-selection-example',
     templateUrl: './single-selection-example.component.html',
     styleUrls: ['./single-selection-example.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class SingleSelectionExampleComponent implements OnInit, AfterViewInit, OnDestroy {
@@ -19,15 +20,15 @@ export class SingleSelectionExampleComponent implements OnInit, AfterViewInit, O
   protected banks: Bank[] = BANKS;
 
   /** control for the selected bank */
-  public bankCtrl: FormControl<Bank> = new FormControl<Bank>(null);
+  public bankCtrl: FormControl<Bank | null> = new FormControl<Bank | null>(null);
 
   /** control for the MatSelect filter keyword */
-  public bankFilterCtrl: FormControl<string> = new FormControl<string>('');
+  public bankFilterCtrl: FormControl<string | null> = new FormControl<string | null>('');
 
   /** list of banks filtered by search keyword */
   public filteredBanks: ReplaySubject<Bank[]> = new ReplaySubject<Bank[]>(1);
 
-  @ViewChild('singleSelect', { static: true }) singleSelect: MatSelect;
+  @ViewChild('singleSelect', { static: true }) singleSelect!: MatSelect;
 
   /** Subject that emits when the component has been destroyed. */
   protected _onDestroy = new Subject<void>();
@@ -85,7 +86,7 @@ export class SingleSelectionExampleComponent implements OnInit, AfterViewInit, O
       this.filteredBanks.next(this.banks.slice());
       return;
     } else {
-      search = search.toLowerCase();
+      search = search!.toLowerCase();
     }
     // filter the banks
     this.filteredBanks.next(

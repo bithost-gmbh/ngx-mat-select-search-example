@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { Bank, BANKS } from '../demo-data';
 import { FormControl } from '@angular/forms';
 import { ReplaySubject, Subject } from 'rxjs';
@@ -9,6 +9,7 @@ import { take, takeUntil } from 'rxjs/operators';
     selector: 'app-custom-no-entries-found-example',
     templateUrl: './custom-no-entries-found-example.component.html',
     styleUrls: ['./custom-no-entries-found-example.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class CustomNoEntriesFoundExampleComponent implements OnInit, AfterViewInit, OnDestroy {
@@ -17,15 +18,15 @@ export class CustomNoEntriesFoundExampleComponent implements OnInit, AfterViewIn
   protected banks: Bank[] = BANKS;
 
   /** control for the selected bank */
-  public bankCtrl: FormControl<Bank> = new FormControl<Bank>(null);
+  public bankCtrl: FormControl<Bank | null> = new FormControl<Bank | null>(null);
 
   /** control for the MatSelect filter keyword */
-  public bankFilterCtrl: FormControl<string> = new FormControl<string>('');
+  public bankFilterCtrl: FormControl<string | null> = new FormControl<string | null>('');
 
   /** list of banks filtered by search keyword */
   public filteredBanks: ReplaySubject<Bank[]> = new ReplaySubject<Bank[]>(1);
 
-  @ViewChild('singleSelect', { static: true }) singleSelect: MatSelect;
+  @ViewChild('singleSelect', { static: true }) singleSelect!: MatSelect;
 
   /** Subject that emits when the component has been destroyed. */
   protected _onDestroy = new Subject<void>();
@@ -83,11 +84,11 @@ export class CustomNoEntriesFoundExampleComponent implements OnInit, AfterViewIn
       this.filteredBanks.next(this.banks.slice());
       return;
     } else {
-      search = search.toLowerCase();
+      search = search!.toLowerCase();
     }
     // filter the banks
     this.filteredBanks.next(
-      this.banks.filter(bank => bank.name.toLowerCase().indexOf(search) > -1)
+      this.banks.filter(bank => bank.name.toLowerCase().indexOf(search!) > -1)
     );
   }
 }

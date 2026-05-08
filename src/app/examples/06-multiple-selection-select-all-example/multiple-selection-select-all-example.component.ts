@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ReplaySubject, Subject } from 'rxjs';
 import { take, takeUntil } from 'rxjs/operators';
@@ -10,6 +10,7 @@ import { Bank, BANKS } from '../demo-data';
     selector: 'app-multiple-selection-select-all-example',
     templateUrl: './multiple-selection-select-all-example.component.html',
     styleUrls: ['./multiple-selection-select-all-example.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class MultipleSelectionSelectAllExampleComponent implements OnInit, AfterViewInit, OnDestroy {
@@ -18,10 +19,10 @@ export class MultipleSelectionSelectAllExampleComponent implements OnInit, After
   protected banks: Bank[] = BANKS;
 
   /** control for the selected bank for multi-selection */
-  public bankMultiCtrl: FormControl<Bank[]> = new FormControl<Bank[]>([]);
+  public bankMultiCtrl: FormControl<Bank[] | null> = new FormControl<Bank[] | null>([]);
 
   /** control for the MatSelect filter keyword multi-selection */
-  public bankMultiFilterCtrl: FormControl<string> = new FormControl<string>('');
+  public bankMultiFilterCtrl: FormControl<string | null> = new FormControl<string | null>('');
 
   /** list of banks filtered by search keyword */
   public filteredBanksMulti: ReplaySubject<Bank[]> = new ReplaySubject<Bank[]>(1);
@@ -33,7 +34,7 @@ export class MultipleSelectionSelectAllExampleComponent implements OnInit, After
   isIndeterminate = false;
   isChecked = false;
 
-  @ViewChild('multiSelect', { static: true }) multiSelect: MatSelect;
+  @ViewChild('multiSelect', { static: true }) multiSelect!: MatSelect;
 
   /** Subject that emits when the component has been destroyed. */
   protected _onDestroy = new Subject<void>();
@@ -110,18 +111,19 @@ export class MultipleSelectionSelectAllExampleComponent implements OnInit, After
       this.filteredBanksMulti.next(this.filteredBanksCache);
       return;
     } else {
-      search = search.toLowerCase();
+      search = search!.toLowerCase();
     }
     // filter the banks
-    this.filteredBanksCache = this.banks.filter(bank => bank.name.toLowerCase().indexOf(search) > -1);
+    this.filteredBanksCache = this.banks.filter(bank => bank.name.toLowerCase().indexOf(search!) > -1);
     this.filteredBanksMulti.next(this.filteredBanksCache);
   }
 
   protected setToggleAllCheckboxState() {
     let filteredLength = 0;
-    if (this.bankMultiCtrl && this.bankMultiCtrl.value) {
+    const value = this.bankMultiCtrl?.value;
+    if (value) {
       this.filteredBanksCache.forEach(el => {
-        if (this.bankMultiCtrl.value.indexOf(el) > -1) {
+        if (value.indexOf(el) > -1) {
           filteredLength++;
         }
       });

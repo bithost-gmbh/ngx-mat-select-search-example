@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { VERSION } from '@angular/material/core';
 
 import { MatSelectSearchVersion } from 'ngx-mat-select-search';
@@ -8,6 +8,7 @@ import { MatSelectSearchVersion } from 'ngx-mat-select-search';
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class AppComponent {

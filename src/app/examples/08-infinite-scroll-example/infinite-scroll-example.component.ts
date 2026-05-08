@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { combineLatest, merge, Observable, Subject } from 'rxjs';
 import { map, mapTo, scan, startWith } from 'rxjs/operators';
@@ -12,12 +12,13 @@ import { Bank } from '../demo-data';
     selector: 'app-infinite-scroll-example',
     templateUrl: './infinite-scroll-example.component.html',
     styleUrls: ['./infinite-scroll-example.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class InfiniteScrollExampleComponent implements OnInit, OnDestroy {
 
   @ViewChild('matSelectInfiniteScroll', { static: true } )
-  infiniteScrollSelect: MatSelect;
+  infiniteScrollSelect!: MatSelect;
 
   /** list with all available data, mocks some sort of backend data source */
   private mockBankList: Bank[] = Array.from({ length: 1000 }).map((_, i) => ({
@@ -26,10 +27,10 @@ export class InfiniteScrollExampleComponent implements OnInit, OnDestroy {
   }));
 
   /** control for the selected bank id */
-  public bankCtrl: FormControl<string> = new FormControl<string>(null);
+  public bankCtrl: FormControl<string | null> = new FormControl<string | null>(null);
 
   /** control for the MatSelect filter keyword */
-  public bankFilterCtrl: FormControl<string> = new FormControl<string>('');
+  public bankFilterCtrl: FormControl<string | null> = new FormControl<string | null>('');
 
   /** list of data corresponding to the search input */
   private filteredData$: Observable<Bank[]> = this.bankFilterCtrl.valueChanges.pipe(
